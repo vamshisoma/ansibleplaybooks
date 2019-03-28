@@ -1,0 +1,9 @@
+---
+- hosts: web
+  user: ansadmin
+  become: true
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: copying login file to client servers
+    copy: src=/home/ansadmin/playbooks/mobile.txt dest=/home/ansadmin/

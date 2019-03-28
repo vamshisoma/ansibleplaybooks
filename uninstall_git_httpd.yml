@@ -1,0 +1,11 @@
+--- # this is my first playbook
+- hosts: web
+  user: ansadmin
+  become: true
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: installing Git on web group dervers
+    yum: pkg=git state=absent
+  - name: insatlling httpd on web group servers
+    yum: pkg=httpd state=absent
